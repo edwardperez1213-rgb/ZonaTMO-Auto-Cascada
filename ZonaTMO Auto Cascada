@@ -1,0 +1,25 @@
+// ==UserScript==
+// @name         ZonaTMO Auto Cascada (funcional)
+// @namespace    https://zonatmo.com/
+// @version      2.0
+// @description  Redirige automáticamente al modo cascada en ZonaTMO
+// @match        *://zonatmo.com/viewer/*
+// @run-at       document-end
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Si ya estamos en modo cascada, no hacer nada
+    if (window.location.href.includes('/cascade')) return;
+
+    // Buscar enlace al modo cascada
+    const checkInterval = setInterval(() => {
+        const enlaceCascada = document.querySelector('a.nav-link[title="Cascada"]');
+        if (enlaceCascada) {
+            clearInterval(checkInterval);
+            console.log("✅ Redirigiendo automáticamente al modo cascada...");
+            window.location.href = enlaceCascada.href;
+        }
+    }, 800);
+})();
