@@ -1,3 +1,4 @@
+
 # ZonaTMO Auto Cascada
 
 Este script para Tampermonkey activa automáticamente el modo "Cascada" al abrir cualquier capítulo en ZonaTMO, ideal para quienes prefieren leer en scroll vertical sin cambiar el modo manualmente.
